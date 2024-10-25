@@ -19,8 +19,8 @@ export default function Rate(props) {
                             <defs>
                                 <linearGradient id={`star-color-${starId}`}>
                                     <stop offset="0%" stopColor="#ffae00" />
-                                    <stop offset={`${rateFill}%`} stopColor="#ffae00" />
-                                    <stop offset={`${rateFill}%`} stopColor="#c3c3c3" />
+                                    <stop offset={`${100 - rateFill}%`} stopColor="#ffae00" />
+                                    <stop offset={`${100 - rateFill}%`} stopColor="#c3c3c3" />
                                     <stop offset="100%" stopColor="#c3c3c3" />
                                 </linearGradient>
                             </defs>
