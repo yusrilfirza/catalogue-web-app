@@ -1,27 +1,31 @@
 import { useState } from 'react';
 import DropdownSort from '../dropdown/sort';
-
-const category = ['All Category', 'Mens', 'Jawelry'];
+import { categoryOptions } from '@/domain/products/constant';
 
 export default function Filter(props) {
+    const { transformData, category, sortBy } = props;
     const [activeFilter, setActiveFilter] = useState('All Category');
+
     return (
         <section id="filter-wrapper">
             <div id="category-filter">
                 {
-                    category.map((item, index) => (
+                    categoryOptions.map((item, index) => (
                         <button
                             type="button"
                             key={`category_${index}`}
                             className={`category-item ${activeFilter === item ? 'active' : ''}`}
-                            onClick={() => setActiveFilter(item)}
+                            onClick={() => {
+                                setActiveFilter(item);
+                                transformData(item, sortBy);
+                            }}
                         >
                             {item}
                         </button>
                     ))
                 }
             </div>
-            <DropdownSort />
+            <DropdownSort transformData={(sortValue) => transformData(category, sortValue)} />
         </section>
     )
 }

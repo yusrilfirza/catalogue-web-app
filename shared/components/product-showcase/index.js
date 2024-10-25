@@ -4,7 +4,8 @@ import Pagination from '../pagination';
 import Rate from '../rate';
 
 export default function ProductShowcase(props) {
-    const { data = [] } = props
+    const { data = [], truncateProductDataList, currentPage, totalData, limitDataPerPage } = props
+
     return (
         <>
             <div id="product-showcase-wrapper">
@@ -19,6 +20,7 @@ export default function ProductShowcase(props) {
                                     style={{
                                         objectFit: "contain"
                                     }}
+                                    alt={`product-${item.id}`}
                                 />
                             </Link>
                             <div className="product-card-header">
@@ -37,7 +39,12 @@ export default function ProductShowcase(props) {
                 }
             </div>
             <div id="product-showcase-pagination">
-                <Pagination />
+                <Pagination
+                    truncateProductDataList={truncateProductDataList}
+                    currentPage={currentPage}
+                    totalData={totalData}
+                    limitDataPerPage={limitDataPerPage}
+                />
             </div>
         </>
     )

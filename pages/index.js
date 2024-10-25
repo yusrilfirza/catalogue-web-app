@@ -1,34 +1,28 @@
-import { useEffect } from "react";
-import { useProductList } from "@/domain/products/hooks/mutation/useProducts";
 import Filter from "@/shared/components/filter";
 import ProductShowcase from "@/shared/components/product-showcase";
-import { queryOptions } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { useProductList } from "@/domain/products/hooks/useProductList";
 
 export default function Home() {
-  const { query, replace } = useRouter();
   const {
-    data, isLoading
-  } = useProductList({
-    queryKey: 'useProductList',
-    options: {
-      initialData: []
-    }
-  });
-
-  const handleFilter = () => {
-
-  };
+    productDataList, transformProductDataList, truncateProductDataList,
+    category, sortBy, currentPage, totalData, limitDataPerPage,
+  } = useProductList();
 
   return (
     <>
-      <Filter onSubmit={handleFilter} />
+      <Filter transformData={transformProductDataList} category={category} sortBy={sortBy} />
       <section id="brand-tagline">
         <h1>All-In-One Shop</h1>
         <span>Shop with us. Saving more cash.</span>
       </section>
       <section id="product-showcase">
-        <ProductShowcase data={data} />
+        <ProductShowcase
+          data={productDataList}
+          truncateProductDataList={truncateProductDataList}
+          currentPage={currentPage}
+          totalData={totalData}
+          limitDataPerPage={limitDataPerPage}
+        />
       </section>
     </>
   );

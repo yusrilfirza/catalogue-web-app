@@ -1,25 +1,9 @@
 import UilAngleDown from '@iconscout/react-unicons/icons/uil-angle-down';
-
-const options = [
-    {
-        label: 'Name A to Z',
-        value: 'name-asc'
-    },
-    {
-        label: 'Name Z to A',
-        value: 'name-desc'
-    },
-    {
-        label: 'Highest Rating',
-        value: 'rate-desc'
-    },
-    {
-        label: 'Lowest Rating',
-        value: 'rate-asc'
-    }
-];
+import { sortOptions } from '@/domain/products/constant';
 
 export default function DropdownSort(props) {
+    const { transformData } = props;
+
     return (
         <div id="dropdown-sort">
             <div id="dropdown-sort-label">
@@ -28,8 +12,8 @@ export default function DropdownSort(props) {
             </div>
             <div id="dropdown-sort-option-wrapper">
                 {
-                    options.map((option) => (
-                        <a key={`option_${option.value}`} className="dropdown-sort-option">{option.label}</a>
+                    sortOptions.map((option) => (
+                        <a key={`option_${option.value}`} onClick={() => transformData(option.value)} className="dropdown-sort-option">{option.label}</a>
                     ))
                 }
             </div>

@@ -17,7 +17,6 @@ export default function Header() {
             </Link>
             <h2 id="brand-name">CATASTROKE</h2>
             <Button variant="icon" icon={UilShoppingCart} />
-            {/* <UilShoppingCart /> */}
         </header>
     )
 }
