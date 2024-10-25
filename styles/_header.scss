@@ -1,0 +1,14 @@
+header {
+    padding: 1.5rem 5rem 1.5rem 5rem;
+    border-bottom: 2px solid $gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2#brand-name {
+    margin: 0;
+    font-style: italic;
+    line-height: 1;
+    font-size: 34px;
+}
