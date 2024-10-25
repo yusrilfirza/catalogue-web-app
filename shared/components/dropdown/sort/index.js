@@ -29,7 +29,7 @@ export default function DropdownSort(props) {
             <div id="dropdown-sort-option-wrapper">
                 {
                     options.map((option) => (
-                        <a className="dropdown-sort-option">{option.label}</a>
+                        <a key={`option_${option.value}`} className="dropdown-sort-option">{option.label}</a>
                     ))
                 }
             </div>

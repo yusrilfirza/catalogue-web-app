@@ -15,7 +15,7 @@ export default function Rate(props) {
                     else if ((index + 1) - decimalRate > 1) pathFill = '#c3c3c3'
 
                     return (
-                        <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24" id="star">
+                        <svg key={`rate-star-${index + 1}`} xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24" id="star">
                             <defs>
                                 <linearGradient id={`star-color-${starId}`}>
                                     <stop offset="0%" stopColor="#ffae00" />
@@ -29,6 +29,7 @@ export default function Rate(props) {
                     )
                 })
             }
+            <span className="rate-value">{rate}</span>
         </div>
     )
 }

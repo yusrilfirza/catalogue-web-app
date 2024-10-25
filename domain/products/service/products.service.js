@@ -1,8 +1,8 @@
-import { postRequest } from '@/shared/libs/http';
+import { getRequest, postRequest } from '@/shared/libs/http';
 
 export const products = async (payload) => {
 	try {
-		return await postRequest({
+		return await getRequest({
 			url: `/posts`,
 			data: payload,
 		});

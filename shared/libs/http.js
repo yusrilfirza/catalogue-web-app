@@ -1,5 +1,4 @@
-import { getSession, signOut } from 'next-auth/react';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 const instance = axios.create({
 	baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -12,11 +11,6 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
 	async (config) => {
-		const token = await getSession();
-
-		if (token?.accessToken && !config.headers?.Authorization) {
-			config.headers.Authorization = `Bearer ${token?.accessToken}`;
-		}
 
 		if (config.headers) {
 			config.headers['X-Client-Timezone'] =
@@ -35,17 +29,6 @@ instance.interceptors.response.use(
 		return response;
 	},
 	(error) => {
-		if (error.response) {
-			if (
-				error.response.status === 401 ||
-				error.response.status === 403
-			) {
-				signOut({
-					callbackUrl: `/login?error=${error.response.data.message}`,
-				});
-			}
-		}
-
 		throw error;
 	}
 );
