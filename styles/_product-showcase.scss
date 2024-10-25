@@ -47,6 +47,22 @@
                 display: flex;
             }
         }
+
+        .product-description {
+            margin: 4px 0 4px 0;
+            line-height: 1;
+            font-weight: 100;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 12px;
+        }
+
+        .product-rate {
+            margin: 4px 0 4px 0;
+            display: flex;
+            width: 40%;
+        }
     }
 }
   

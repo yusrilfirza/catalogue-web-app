@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import DropdownSort from '../dropdown/sort';
 import Image from 'next/image';
 import Link from 'next/link';
+import UilStar from '@iconscout/react-unicons/icons/uil-star';
 import Pagination from '../pagination';
+import Rate from '../rate';
 
 const data = [
     {
@@ -91,6 +91,10 @@ export default function ProductShowcase(props) {
                                     <h3>{item.price}</h3>
                                 </div>
                             </div>
+                            <div>
+                                <h4 className="product-description">{item.description}</h4>
+                            </div>
+                            <Rate rate={item.rating.rate} />
                         </div>
                     ))
                 }
