@@ -6,7 +6,7 @@ import { sortOptions } from "../constant";
 
 export const useProductList = () => {
     const {
-        data, isLoading
+        data, isLoading, isFetching
     } = useProductListQuery({
         queryKey: 'useProductList',
         options: {
@@ -56,8 +56,9 @@ export const useProductList = () => {
         sortBy,
         currentPage,
         totalData,
-        limitDataPerPage
-    }), [data, productDataList]);
+        limitDataPerPage,
+        isFetching
+    }), [data, productDataList, isFetching]);
 }
 
 const filterData = (category, productDataList) => {

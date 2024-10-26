@@ -1,11 +1,12 @@
 import Filter from "@/shared/components/filter";
 import ProductShowcase from "@/shared/components/product-showcase";
 import { useProductList } from "@/domain/products/hooks/useProductList";
+import Loading from "@/shared/components/loading";
 
 export default function Home() {
   const {
     productDataList, transformProductDataList, truncateProductDataList,
-    category, sortBy, currentPage, totalData, limitDataPerPage,
+    category, sortBy, currentPage, totalData, limitDataPerPage, isFetching
   } = useProductList();
 
   return (
@@ -16,13 +17,19 @@ export default function Home() {
         <span>Shop with us. Saving more cash.</span>
       </section>
       <section id="product-showcase">
-        <ProductShowcase
-          data={productDataList}
-          truncateProductDataList={truncateProductDataList}
-          currentPage={currentPage}
-          totalData={totalData}
-          limitDataPerPage={limitDataPerPage}
-        />
+        {
+          isFetching ? (
+            <Loading />
+          ) : (
+            <ProductShowcase
+              data={productDataList}
+              truncateProductDataList={truncateProductDataList}
+              currentPage={currentPage}
+              totalData={totalData}
+              limitDataPerPage={limitDataPerPage}
+            />
+          )
+        }
       </section>
     </>
   );
