@@ -3,6 +3,7 @@ import ProductVariant from "@/shared/components/product-variant";
 import Rate from "@/shared/components/rate";
 import Review from "@/shared/components/review";
 import Image from "next/image";
+import Loading from '@/shared/components/loading';
 
 export default function ProductDetail(props) {
     const { data, isLoading, isFetching, variant } = useProductDetail();
@@ -10,7 +11,9 @@ export default function ProductDetail(props) {
     return (
         <section id="product-detail">
             {
-                isFetching ? 'Loading' : (
+                isFetching ? (
+                    <Loading />
+                ) : (
                     <>
                         <div id="product-detail-wrapper">
                             <div id="product-detail-column">
