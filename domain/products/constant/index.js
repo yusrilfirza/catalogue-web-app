@@ -25,4 +25,20 @@ export const sortOptions = [
     },
 ];
 
-export const categoryOptions = ['All Category', "Men's Clothing", 'Jewelery', 'Electronics']
+export const categoryOptions = ['All Category', "Men's Clothing", 'Jewelery', 'Electronics'];
+
+export const colorVariant = {
+    type: 'color',
+    options: ['black', 'white'],
+};
+
+export const sizeVariant = {
+    type: 'size',
+    options: ['xs', 's', 'm', 'l', 'xl'],
+};
+
+export const variantByCategory = {
+    clothing: [ colorVariant, sizeVariant ],
+    jewelery: [ colorVariant ],
+    electronics: [ colorVariant ],
+};

@@ -41,8 +41,8 @@ export const useProductList = () => {
         setProductDataList(truncateProductDataList(1, newData));
         setTotalData(newData.length);
         setCurrentPage(1);
-    }
-
+    };
+    
     useEffect(() => {
         truncateProductDataList(currentPage);
         setTotalData(data.length);

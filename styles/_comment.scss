@@ -1,0 +1,38 @@
+.comment-wrapper {
+    font-size: 14px;
+    padding: 12px 0 12px 0;
+    margin-left: 16px;
+    border-bottom: 1px solid $gray;
+    display: flex;
+    flex-direction: column;
+    gap: 4x;
+
+    h4 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .product-rate {
+        width: 80px;
+    }
+}
+
+.reply-area {
+    margin-top: 8px;
+    margin-left: 12px;
+    padding: 12px;
+    background-color: $gray;
+
+    .comment-reply-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 4x;
+
+        p {
+            color: $gray-3;
+        }
+    }
+}
