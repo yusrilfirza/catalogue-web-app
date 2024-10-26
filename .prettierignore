@@ -1,0 +1,17 @@
+.next
+.cache
+package-lock.json
+public
+node_modules
+next-env.d.ts
+next.config.ts
+yarn.lock
+coverage
+.env.development
+.env.production
+.env.test
+.env.staging
+.gitignore
+README.md
+tsconfig.json
+yarn-error.log

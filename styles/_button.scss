@@ -1,0 +1,21 @@
+#icon-button {
+    border: 1px solid $gray-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 4px;
+    background-color: $white;
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 #0a0a0a20;;
+    color: $gray-3;
+}
+
+#icon-button:hover {
+    background-color: $gray;
+}
+
+#icon-button:disabled {
+    background-color: $gray;
+    cursor: not-allowed;
+}
