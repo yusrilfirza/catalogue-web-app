@@ -4,11 +4,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
 
-h2#brand-name {
-    margin: 0;
-    font-style: italic;
-    line-height: 1;
-    font-size: 34px;
+    h2#brand-name {
+        margin: 0;
+        font-style: italic;
+        line-height: 1;
+        font-size: 34px;
+    }
+
+    @media only screen and (max-width: $small) {
+        max-width: 100%;
+        padding: 1.5rem;
+
+        a {
+            visibility: hidden;
+        }
+
+        h2#brand-name {
+            font-size: 24px;
+        }
+    }
 }
