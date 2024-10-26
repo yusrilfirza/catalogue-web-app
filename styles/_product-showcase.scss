@@ -39,6 +39,19 @@
             font-size: 12px;
         }
     }
+
+    @media only screen and (max-width: $small) {
+        max-width: 100%;
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    @media only screen and (min-width: $small) and (max-width: $medium) {
+        padding: 1.5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 .product-rate {
@@ -74,17 +87,38 @@
   
 #product-showcase-pagination {
     padding: 0 5rem 0 5rem;
+
+    @media only screen and (max-width: $small) {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    @media only screen and (min-width: $small) and (max-width: $medium) {
+        padding: 0;
+    }
 }
 
 #pagination-wrapper {
     display: flex;
     justify-content: end;
     gap: 8px;
+
+    @media only screen and (max-width: $medium) {
+        justify-content: center;
+    }
 }
 
 #product-showcase {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+
+    @media only screen and (max-width: $small) {
+        width: 100%;
+    }
+
+    @media only screen and (min-width: $small) and (max-width: $medium) {
+        width: 100%;
+    }
 }
 
 #product-detail {
@@ -95,8 +129,24 @@
         margin: 8px 0 8px 0;
     }
 
+    #product-detail-wrapper {
+        display: flex;
+        max-width: 100%;
+        flex-direction: column;
+    }
+
     #product-detail-column {
-        width: 50%;
+        display: flex;
+        gap: 14px;
+        width: 100%;
+
+        #product-content {
+            width: 100%;
+        }
+
+        #product-review-wrapper {
+            width: 50%;
+        }
 
         .product-detail-sub-title {
             display: flex;
@@ -133,6 +183,53 @@
         #product-detail-description {
             color: $gray-2;
             margin: 8px 16px 8px 0;
+        }
+
+        @media only screen and (max-width: $small) {
+            h2 {
+                margin: 0;
+                padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            }
+
+            .comment-wrapper {
+                margin: 0;
+                padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            }
+
+            #product-review-wrapper {
+                width: 100%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $small) {
+        max-width: 100%;
+        
+        #product-detail-column {
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            margin: 0;
+        }
+
+        .product-detail-sub-title {
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        }
+
+        p {
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        }
+
+        #product-variant {
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        }
+
+        #product-detail-wrapper {
+            max-width: 100%;
         }
     }
 }

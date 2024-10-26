@@ -24,6 +24,11 @@ body {
   padding: 5rem 4rem 2rem 4rem;
   text-align: center;
   font-size: 12px;
+
+  @media only screen and (max-width: $small) {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
 }
 
 #category-filter {
@@ -52,6 +57,10 @@ body {
   justify-content: space-between;
   border-bottom: 2px solid $gray;
   align-items: center;
+
+  @media only screen and (max-width: $small) {
+    display: none;
+  }
 }
 
 #brand-tagline {
@@ -70,6 +79,16 @@ body {
   span {
     font-size: 16px;
     color: $gray-2;
+  }
+
+  @media only screen and (max-width: $small) {
+    max-width: 100%;
+    padding: 1.5rem;
+    gap: 4px;
+
+    h1 {
+      font-size: 50px;
+    }
   }
 }
 
