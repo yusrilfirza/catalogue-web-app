@@ -1,7 +1,9 @@
+import GhostButton from "./ghost";
 import IconButton from "./icon";
 
 const buttonVariant = {
-    icon: (props) => <IconButton {...props} />
+    icon: (props) => <IconButton {...props} />,
+    ghost: (props) => <GhostButton {...props} />
 }
 
 export default function Button(props) {

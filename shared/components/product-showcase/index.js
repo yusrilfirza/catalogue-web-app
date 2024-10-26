@@ -23,7 +23,7 @@ export default function ProductShowcase(props) {
                                     alt={`product-${item.id}`}
                                 />
                             </Link>
-                            <div className="product-card-header">
+                            <div className="product-header">
                                 <h3 className="title">{item.title}</h3>
                                 <div className="product-price">
                                     <h3 className="dollar-symbol">$</h3>
